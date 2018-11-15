@@ -1,0 +1,34 @@
+<div class="container">
+
+  <!--
+    <button>
+        <a [routerLink]="['/ticket']" class="btn btn-default btn-lg">All Tickets</a>
+      </button>
+      <button>
+          <a [routerLink]="['/ticket-create']" class="btn btn-default btn-lg">Add Tickets</a>
+        </button>
+      <button>
+        <a [routerLink]="['/home']">Home</a>
+      </button>
+  -->
+
+  <h1>{{ ticket.name }}</h1>
+  <dl class="list">
+    <dt>Date</dt>
+    <dd>{{ ticket.date }}</dd>
+    <dt>Assigned to</dt>
+    <dd>{{ ticket.assigned_to }}</dd>
+    <dt>Subject</dt>
+    <dd>{{ ticket.subject }}</dd>
+    <dt>Description</dt>
+    <dd>{{ ticket.description }}</dd>
+    <dt>State</dt>
+    <dd>{{ ticket.state}} </dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/ticket-edit', ticket.id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteTicket(ticket.id)">DELETE</button>
+  </div>
+</div>
